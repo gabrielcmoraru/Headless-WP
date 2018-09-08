@@ -12,8 +12,7 @@
         "docker:stop": "docker stop frontend",
         "docker:start": "docker start frontend && yarn run docker:logs",
         "docker:logs": "docker logs -f frontend",
-        "deploy":
-            "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
+        "deploy": "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
     },
     "keywords": [],
     "author": "",
@@ -22,6 +21,7 @@
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
         "next": "latest",
+        "nuka-carousel": "^4.3.9",
         "react": "^16.0.0"
     },
     "devDependencies": {

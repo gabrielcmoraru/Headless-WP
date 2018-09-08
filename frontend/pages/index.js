@@ -5,6 +5,7 @@ import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
+import Slider from '../components/Slider'
 
 const headerImageStyle = {
     marginTop: 50,
@@ -41,12 +42,8 @@ class Index extends Component {
         });
         return (
             <Layout {...this.props}>
-                <img
-                    src="/static/images/wordpress-plus-react-header.png"
-                    width="815"
-                    style={headerImageStyle}
-                />
                 <h1>{this.props.page.title.rendered}</h1>
+                <Slider/>
                 <div
                     dangerouslySetInnerHTML={{
                         __html: this.props.page.content.rendered
