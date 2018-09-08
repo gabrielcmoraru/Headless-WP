@@ -14,7 +14,7 @@ const mainLayout = {
 
 const Layout = props => (
     <div style={layoutStyle}>
-        <Header />
+        <Header mainNav={props.mainNav}/>
         <main style={mainLayout}>
             <section>
                 {props.children}
@@ -23,7 +23,7 @@ const Layout = props => (
                 {props.index && <PostIndex/>}
             </aside>
         </main>
-        <Footer />
+        <Footer footerNav={props.footerNav}/>
     </div>
 );
 

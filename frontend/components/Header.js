@@ -4,7 +4,6 @@ import Head from "next/head";
 import Menu from "./Menu.js";
 import { Config } from "../config.js";
 import stylesheet from '../src/styles/style.scss';
-import MainNav from './MainNav';
 
 
 class Header extends Component {
@@ -31,15 +30,7 @@ class Header extends Component {
                     <Link href="/">
                     <a><h1>Wordpress Blog</h1></a>
                     </Link>
-                    <nav>
-                        <Link href="/">
-                            <a>Home</a>
-                        </Link>
-                        <Link href="/about">
-                            <a>About</a>
-                        </Link>
-                    </nav>
-                    <MainNav/>
+                    <Menu menu={this.props.mainNav}/>
                 </header>
             </div>
         );

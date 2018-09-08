@@ -4,12 +4,17 @@ import { Config } from "../config.js";
 const PageWrapper = Comp => (
   class extends React.Component {
     static async getInitialProps(args) {
-      const headerMenuRes = await fetch(
-        `${Config.apiUrl}/wp-json/menus/v1/menus/header-menu`
+      const mainNavRes = await fetch(
+        `${Config.apiUrl}/wp-json/menus/v1/menus/main-nav`
       );
-      const headerMenu = await headerMenuRes.json();
+      const mainNav = await mainNavRes.json();
+      const footerNavRes = await fetch(
+        `${Config.apiUrl}/wp-json/menus/v1/menus/footer-nav`
+      );
+      const footerNav = await footerNavRes.json();
       return {
-        headerMenu,
+        mainNav,
+        footerNav,
         ...(Comp.getInitialProps ? await Comp.getInitialProps(args) : null),
       };
     }
