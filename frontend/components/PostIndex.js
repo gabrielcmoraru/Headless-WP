@@ -5,12 +5,17 @@ import fetch from 'isomorphic-unfetch';
 import { Config } from '../config';
 
 export default class PostIndex extends Component {
+  static defaultProps = {
+    limit: 3,
+  }
+
   state = {
     posts: []
   };
 
   async componentWillMount() {
-    const postsRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/posts`)
+    const { limit } = this.props;
+    const postsRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/posts?per_page=${limit}`)
     const posts = await postsRes.json();
     this.setState( {
       posts
