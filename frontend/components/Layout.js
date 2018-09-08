@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import PostIndex from './PostIndex';
 
 const layoutStyle = {
     margin: 20,
@@ -9,7 +10,14 @@ const layoutStyle = {
 const Layout = props => (
     <div style={layoutStyle}>
         <Header />
-        {props.children}
+        <main>
+            <section>
+                {props.children}
+            </section>
+            <aside>
+                <PostIndex/>
+            </aside>
+        </main>
         <Footer />
     </div>
 );

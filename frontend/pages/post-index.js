@@ -4,13 +4,12 @@ import fetch from 'isomorphic-unfetch';
 import { Config } from '../config';
 
 export default class PostIndex extends Component {
-
   static async getInitialProps() {
     const postsRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/posts`)
     const posts = await postsRes.json();
     return {
       posts
-    }
+    };
   }
 
   render() {
