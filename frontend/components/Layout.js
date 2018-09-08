@@ -7,19 +7,28 @@ const layoutStyle = {
     padding: 20
 };
 
+const mainLayout = {
+    display: 'grid',
+    gridTemplateColumns: '70% 30%'
+}
+
 const Layout = props => (
     <div style={layoutStyle}>
         <Header />
-        <main>
+        <main style={mainLayout}>
             <section>
                 {props.children}
             </section>
             <aside>
-                <PostIndex/>
+                {props.index && <PostIndex/>}
             </aside>
         </main>
         <Footer />
     </div>
 );
+
+Layout.defaultProps ={
+    index: true
+}
 
 export default Layout;

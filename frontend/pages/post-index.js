@@ -8,7 +8,7 @@ export default class PostIndexPage extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout index={false}>
         <h1>Post Index</h1>
         <PostIndex limit={5}/>
       </Layout>
