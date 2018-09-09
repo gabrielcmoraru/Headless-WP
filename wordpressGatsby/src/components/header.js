@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, menu }) => (
   <div
     style={{
       background: 'rebeccapurple',
@@ -26,6 +26,15 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <nav>
+        {menu.map(item =>
+          <Link
+          to={`/${item.object_slug}`}
+          >
+            {item.title}
+          </Link>
+        )}
+      </nav>
     </div>
   </div>
 )

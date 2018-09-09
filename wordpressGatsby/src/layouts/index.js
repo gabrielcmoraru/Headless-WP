@@ -14,7 +14,9 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header
+    menu={data.wordpressWpApiMenusMenusItems.items}
+    siteTitle={data.site.siteMetadata.title} />
     <div
       style={{
         margin: '0 auto',
@@ -39,6 +41,12 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    wordpressWpApiMenusMenusItems(slug: {eq: "main-nav"}) {
+      items {
+        title
+        object_slug
       }
     }
   }
